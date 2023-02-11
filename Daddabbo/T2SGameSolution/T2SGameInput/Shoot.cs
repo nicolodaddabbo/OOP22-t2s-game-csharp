@@ -16,7 +16,7 @@ namespace T2SGameInput
         /// <inheritdoc />
         public void Execute(IEntity entity)
         {
-            throw new NotImplementedException();
+            entity.ShootingDirection = _direction.ToString();
         }
     }
 }
