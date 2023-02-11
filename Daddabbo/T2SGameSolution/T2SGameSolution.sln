@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T2SGameInput", "T2SGameInput\T2SGameInput.csproj", "{4312FBCC-F451-4049-AC04-11E2A5562D7E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T2SGameInputTests", "T2SGameInputTests\T2SGameInputTests.csproj", "{0B1CC5BC-C5D4-4216-98AB-E4F3A3BFD859}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{4312FBCC-F451-4049-AC04-11E2A5562D7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4312FBCC-F451-4049-AC04-11E2A5562D7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4312FBCC-F451-4049-AC04-11E2A5562D7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B1CC5BC-C5D4-4216-98AB-E4F3A3BFD859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B1CC5BC-C5D4-4216-98AB-E4F3A3BFD859}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B1CC5BC-C5D4-4216-98AB-E4F3A3BFD859}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B1CC5BC-C5D4-4216-98AB-E4F3A3BFD859}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
