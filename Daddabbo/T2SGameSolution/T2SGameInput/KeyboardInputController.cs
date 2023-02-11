@@ -34,13 +34,20 @@ namespace T2SGameInput
         public KeyboardInputController()
         {
             _states.Add(_moveState);
-            _states.Add(_moveState);
+            _states.Add(_shootState);
             AddToCommandsQueue();
         }
 
         public void NotifyKeyPressed(int keyCode)
         {
             _states.ForEach(s => s.NotifyInput(keyCode));
+            AddToCommandsQueue();
+        }
+
+        public void NotifyKeyReleased(int keyCode)
+        {
+            _moveState.NotifyInputRelease(keyCode, new Move(Directions.STAY));
+            _shootState.NotifyInputRelease(keyCode, null);
             AddToCommandsQueue();
         }
 
