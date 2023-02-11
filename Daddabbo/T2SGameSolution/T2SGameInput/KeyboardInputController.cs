@@ -53,9 +53,14 @@ namespace T2SGameInput
 
         private void AddToCommandsQueue()
         {
-            _states.Where(s => s.GetCurrentCommand() != null)
-                    .Select(s => s.GetCurrentCommand())
-                    .ToList().ForEach(s => base.AddToCommandsQueue(s));
+            _states.Select(s => s.GetCurrentCommand())
+                    .ToList().ForEach(s =>
+                    {
+                        if (s != null)
+                        {
+                            base.AddToCommandsQueue(s);
+                        }
+                    });
         }
 
     }
