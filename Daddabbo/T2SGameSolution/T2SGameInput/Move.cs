@@ -14,7 +14,7 @@ namespace T2SGameInput
         }
 
         /// <inheritdoc />
-        public void execute(IEntity entity)
+        public void Execute(IEntity entity)
         {
             throw new NotImplementedException();
         }
