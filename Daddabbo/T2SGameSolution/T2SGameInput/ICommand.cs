@@ -9,6 +9,6 @@ namespace T2SGameInput
         /// Execute the command.
         /// </summary>
         /// <param name="entity">the entity to execute the command on</param>
-        void execute(IEntity entity);
+        void Execute(IEntity entity);
     }
 }
