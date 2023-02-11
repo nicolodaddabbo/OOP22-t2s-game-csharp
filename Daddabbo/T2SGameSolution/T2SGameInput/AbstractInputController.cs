@@ -1,6 +1,3 @@
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-
 namespace T2SGameInput
 {
     /// <summary>
