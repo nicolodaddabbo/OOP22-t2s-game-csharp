@@ -35,11 +35,13 @@ namespace T2SGameInput
         {
             _states.Add(_moveState);
             _states.Add(_moveState);
+            AddToCommandsQueue();
         }
 
         public void NotifyKeyPressed(int keyCode)
         {
             _states.ForEach(s => s.NotifyInput(keyCode));
+            AddToCommandsQueue();
         }
 
         private void AddToCommandsQueue()
