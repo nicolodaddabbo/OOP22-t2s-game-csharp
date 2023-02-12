@@ -25,7 +25,7 @@ namespace T2SGameInputTests
             Assert.AreEqual(Directions.Up.ToString(), _entity.MovingDirection);
             _keyboardInputController.NotifyKeyReleased(MoveUpCode);
             _inputComponent.Update();
-            Assert.AreEqual(Directions.STAY.ToString(), _entity.MovingDirection);
+            Assert.AreEqual(Directions.Stay.ToString(), _entity.MovingDirection);
         }
 
         [TestMethod]

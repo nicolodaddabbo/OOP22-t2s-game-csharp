@@ -46,7 +46,7 @@ namespace T2SGameInput
 
         public void NotifyKeyReleased(int keyCode)
         {
-            _moveState.NotifyInputRelease(keyCode, new Move(Directions.STAY));
+            _moveState.NotifyInputRelease(keyCode, new Move(Directions.Stay));
             _shootState.NotifyInputRelease(keyCode, null);
             AddToCommandsQueue();
         }
