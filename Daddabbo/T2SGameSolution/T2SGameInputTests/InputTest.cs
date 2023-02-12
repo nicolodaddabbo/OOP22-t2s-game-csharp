@@ -20,9 +20,9 @@ namespace T2SGameInputTests
             Assert.AreEqual(_entity.MovingDirection, "");
             _keyboardInputController.NotifyKeyPressed(MoveUpCode);
             _inputComponent.Update();
-            Assert.AreEqual(Directions.UP.ToString(), _entity.MovingDirection);
+            Assert.AreEqual(Directions.Up.ToString(), _entity.MovingDirection);
             _keyboardInputController.NotifyKeyReleased(0);
-            Assert.AreEqual(Directions.UP.ToString(), _entity.MovingDirection);
+            Assert.AreEqual(Directions.Up.ToString(), _entity.MovingDirection);
             _keyboardInputController.NotifyKeyReleased(MoveUpCode);
             _inputComponent.Update();
             Assert.AreEqual(Directions.STAY.ToString(), _entity.MovingDirection);
@@ -34,7 +34,7 @@ namespace T2SGameInputTests
             Assert.AreEqual(_entity.ShootingDirection, "");
             _keyboardInputController.NotifyKeyPressed(ShootUpCode);
             _inputComponent.Update();
-            Assert.AreEqual(Directions.UP.ToString(), _entity.ShootingDirection);
+            Assert.AreEqual(Directions.Up.ToString(), _entity.ShootingDirection);
         }
     }
 }

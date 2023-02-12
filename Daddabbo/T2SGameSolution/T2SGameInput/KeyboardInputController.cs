@@ -15,17 +15,17 @@ namespace T2SGameInput
         private const int ShootLeftCode = 37;
         private static readonly IDictionary<int, ICommand> WalkMoveset = new Dictionary<int, ICommand>()
         {
-            [MoveUpCode] = new Move(Directions.UP),
-            [MoveRightCode] = new Move(Directions.RIGHT),
-            [MoveDownCode] = new Move(Directions.DOWN),
-            [MoveLeftCode] = new Move(Directions.LEFT)
+            [MoveUpCode] = new Move(Directions.Up),
+            [MoveRightCode] = new Move(Directions.Right),
+            [MoveDownCode] = new Move(Directions.Down),
+            [MoveLeftCode] = new Move(Directions.Left)
         };
         private static readonly IDictionary<int, ICommand> ShootMovest = new Dictionary<int, ICommand>()
         {
-            [ShootUpCode] = new Shoot(Directions.UP),
-            [ShootRightCode] = new Shoot(Directions.RIGHT),
-            [ShootDownCode] = new Shoot(Directions.DOWN),
-            [ShootLeftCode] = new Shoot(Directions.LEFT)
+            [ShootUpCode] = new Shoot(Directions.Up),
+            [ShootRightCode] = new Shoot(Directions.Right),
+            [ShootDownCode] = new Shoot(Directions.Down),
+            [ShootLeftCode] = new Shoot(Directions.Left)
         };
         private readonly IEntityState<int> _moveState = new EntityState<int>(WalkMoveset);
         private readonly IEntityState<int> _shootState = new EntityState<int>(ShootMovest);

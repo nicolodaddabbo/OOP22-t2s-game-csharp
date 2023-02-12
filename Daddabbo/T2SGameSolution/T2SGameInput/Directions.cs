@@ -8,22 +8,22 @@ namespace T2SGameInput
         /// <summary>
         /// Up direction.
         /// </summary>
-        UP,
+        Up,
         /// <summary>
         /// Right direction.
         /// </summary>
-        RIGHT,
+        Right,
         /// <summary>
         /// Down direction.
         /// </summary>
-        DOWN,
+        Down,
         /// <summary>
         /// Left direction.
         /// </summary>
-        LEFT,
+        Left,
         /// <summary>
         /// Stay still direction.
         /// </summary>
-        STAY
+        Stay
     }
 }
