@@ -2,18 +2,18 @@ namespace T2SGameEntityPhysicsTests
 {
 
     [TestClass]
-    class EntityTest
+    public class EntityTest
     {
 
-        private Entity BaseEntity()
+        private IEntity BaseEntity()
         {
             return new Entity(new Vector2D(0, 0), EntityType.Player);
         }
 
         [TestMethod]
-        void TestGetComponentIsPresentAndReturnsExpectedComponent()
+        public void TestGetComponentIsPresentAndReturnsExpectedComponent()
         {
-            Entity entity = BaseEntity();
+            var entity = BaseEntity();
             entity.AddComponent(new PhysicsComponent(0));
             var componentNullable = entity.GetComponent<PhysicsComponent>();
             Assert.IsTrue(componentNullable != null);
@@ -21,14 +21,14 @@ namespace T2SGameEntityPhysicsTests
         }
 
         [TestMethod]
-        void TestGetComponentIsNotPresent()
+        public void TestGetComponentIsNotPresent()
         {
-            Entity entity = BaseEntity();
+            var entity = BaseEntity();
             entity.AddComponent(new PhysicsComponent(0));
-            var componentNullable = entity.GetComponent<PhysicsComponent>();
+            var componentNullable = entity.GetComponent<CollisionComponent>();
             Assert.IsFalse(componentNullable != null);
         }
 
     }
-    
+
 }
