@@ -7,17 +7,20 @@ namespace T2SGameEntityPhysics
     {
 
         private readonly HashSet<IComponent> _components;
-        private readonly EntityType _type;
-        private Vector2D _position;
 
+        /// <inheritdoc />
+        public EntityType Type { get; }
+
+        /// <inheritdoc />
+        public Vector2D Position { get; set; }
 
         /// <param name="position">The starting position of the entity.</param>
         /// <param name="type">The type of the entity.</param>
         public Entity(Vector2D position, EntityType type)
         {
             _components = new HashSet<IComponent>();
-            _type = type;
-            _position = position;
+            Type = type;
+            Position = position;
         }
 
         /// <inheritdoc />
@@ -47,19 +50,6 @@ namespace T2SGameEntityPhysics
         public void NotifyComponent<T, S>(IMessageFunc<S> message) where T : IComponent
         {
             GetComponent<T>()?.Receive(message);
-        }
-
-        /// <inheritdoc />
-        public Vector2D Position
-        {
-            get { return _position; }
-            set { _position = value; }
-        }
-
-        /// <inheritdoc />
-        public EntityType Type
-        {
-            get { return _type; }
         }
 
     }

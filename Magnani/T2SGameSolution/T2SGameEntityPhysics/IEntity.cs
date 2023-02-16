@@ -10,6 +10,16 @@ namespace T2SGameEntityPhysics
         /// </summary>
         HashSet<IComponent> Components { get; }
 
+        /// <summary>
+        /// The type of entity.
+        /// </summary>
+        EntityType Type { get; }
+
+        /// <summary>
+        /// The entity position.
+        /// </summary>
+        Vector2D Position { get; set; }
+
         /// <typeparam name="T">Type of the requested component.</typeparam>
         /// <returns>The specified component if present, otherwise returns null.</returns>
         T GetComponent<T>() where T : IComponent;
@@ -29,16 +39,6 @@ namespace T2SGameEntityPhysics
         /// <typeparam name="T">The type of the receiver.</typeparam>
         /// <typeparam name="S">The type of the message.</typeparam>
         void NotifyComponent<T, S>(IMessageFunc<S> message) where T : IComponent;
-
-        /// <summary>
-        /// The entity position.
-        /// </summary>
-        Vector2D Position { get; set; }
-
-        /// <summary>
-        /// The type of entity.
-        /// </summary>
-        EntityType Type { get; }
 
     }
 }
