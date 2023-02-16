@@ -121,13 +121,13 @@ namespace T2SGameEntityPhysics
         {
             return obj is Vector2D d &&
                    X == d.X &&
-                   Y == d.X;
+                   Y == d.Y;
         }
 
         /// <inheritdoc />
         public override string? ToString()
         {
-            return base.ToString();
+            return base.ToString() + "[x=" + X + ", y=" + Y + "]";
         }
 
     }
