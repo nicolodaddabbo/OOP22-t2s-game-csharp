@@ -1,9 +1,6 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace T2SGamePowerUp.api
+namespace T2SGameSolution.T2SGamePowerUp
 {   /// <summary>
     /// interface describing a PowerUp factory.
     /// </summary>

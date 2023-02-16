@@ -1,9 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using T2SGameSolution.codeForTestPurposes;
 
-namespace T2SGamePowerUp.api
+namespace T2SGameSolution.T2SGamePowerUp
 {
     /// <summary>
     /// functional interface that represents a power up.
@@ -14,6 +11,6 @@ namespace T2SGamePowerUp.api
         /// method called to obtain/gain a power up.
         /// </summary>
         /// <param name="entity">entity that receives the power up</param>
-        void Obtain(Entity entity);
+        void Obtain(IEntity entity);
     }
 }

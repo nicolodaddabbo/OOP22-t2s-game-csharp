@@ -1,22 +1,37 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using T2SGamePowerUp.api;
+using T2SGameSolution.codeForTestPurposes;
 
-namespace T2SGamePowerUp.impl
+namespace T2SGameSolution.T2SGamePowerUp
 {
     public class PowerUpFactory : IPowerUpFactory
     {
-        private static readonly int DMGUP = 1;
-        private static readonly double PROJSPEEDUP = 0.5;
-        private static readonly int PROJSIZEUP = 5;
-        private static readonly double FIRERATEUP = 0.05;
-        private static readonly int HEALTHUP = 1;
-        private static readonly double SPEEDUP = 0.25;
+        private const int DmgUp = 1;
+        private const double ProjSpeedUp = 0.5;
+        private const int ProjSizeUp = 5;
+        private const double FirerateUp = 0.05;
+        private const int HealthUp = 1;
+        private const double SpeedUp = 0.25;
 
-        private IPowerUp FromFunction(Action<Entity> function) => function.Invoke();
+        private class PowerUp : IPowerUp
+        {
+            private Action<IEntity> function;
+            public PowerUp(Action<IEntity> function)
+            {
+                this.function = function;
+            }
 
+            public void Obtain(IEntity entity)
+            {
+                function.Invoke(entity);
+            }
+        }
+        
+        private IPowerUp FromFunction(Action<IEntity> function)
+        {
+            return new PowerUp(function);
+        }
+   
         public IPowerUp GenerateDamageBoostPowerUp()
         {
             return FromFunction(entity =>
@@ -24,7 +39,7 @@ namespace T2SGamePowerUp.impl
                 ShootComponent shootComponent = entity.GetComponent<ShootComponent>();
                 if (shootComponent != null)
                 {
-                    shootComponent.SetProjectileDamage(shootComponent.GetProjectileDamage() + DMGUP);
+                    shootComponent.ProjectileDamage += DmgUp;
                 }
             });
         }
@@ -36,7 +51,7 @@ namespace T2SGamePowerUp.impl
                 ShootComponent shootComponent = entity.GetComponent<ShootComponent>();
                 if (shootComponent != null)
                 {
-                    shootComponent.SetFireRateSeconds(shootComponent.GetFireRateSeconds() + FIRERATEUP);
+                    shootComponent.FireRateSeconds = shootComponent.FireRateSeconds + FirerateUp;
                 }
             });
         }
@@ -48,7 +63,7 @@ namespace T2SGamePowerUp.impl
                 HealthComponent healthComponent = entity.GetComponent<HealthComponent>();
                 if (healthComponent != null)
                 {
-                    healthComponent.SetHealth(healthComponent.GetHealth() + HEALTHUP);
+                    healthComponent.Health += HealthUp;
                 }
             });
         }
@@ -60,7 +75,7 @@ namespace T2SGamePowerUp.impl
                 ShootComponent shootComponent = entity.GetComponent<ShootComponent>();
                 if (shootComponent != null)
                 {
-                    shootComponent.SetProjectileSize(shootComponent.GetProjectileSize() + PROJSIZEUP);
+                    shootComponent.ProjectileSize += ProjSizeUp;
                 }
             });
         }
@@ -72,7 +87,7 @@ namespace T2SGamePowerUp.impl
                 ShootComponent shootComponent = entity.GetComponent<ShootComponent>();
                 if (shootComponent != null)
                 {
-                    shootComponent.SetProjectileSpeed(shootComponent.GetProjectileSpeed() + PROJSPEEDUP);
+                    shootComponent.ProjectileSpeed += ProjSpeedUp;
                 }
             });
         }
@@ -84,7 +99,7 @@ namespace T2SGamePowerUp.impl
                 PhysicsComponent physicsComponent = entity.GetComponent<PhysicsComponent>();
                 if (physicsComponent != null)
                 {
-                    physicsComponent.SetSpeed(physicsComponent.GetSpeed() + SPEEDUP);
+                    physicsComponent.Speed += SpeedUp;
                 }
             });
         }
