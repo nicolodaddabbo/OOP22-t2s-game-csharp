@@ -35,13 +35,8 @@ namespace T2SGameEntityPhysics
         /// <inheritdoc />
         public override void Receive<T>(IMessageFunc<T> message)
         {
-            switch (message)
-            {
-                case Directions dir:
-                    ReceiveDirection(dir);
-                    break;
-                default:
-                    throw new ArgumentException("Unsupported message type");
+            if(message() is Directions dir){
+                ReceiveDirection(dir);
             }
         }
 

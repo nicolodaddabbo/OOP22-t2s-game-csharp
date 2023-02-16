@@ -38,13 +38,8 @@ namespace T2SGameEntityPhysics
         /// <inheritdoc />
         public override void Receive<T>(IMessageFunc<T> message)
         {
-            switch (message)
-            {
-                case Vector2D pos:
-                    ReceiveFromPhysicsComponent(pos);
-                    break;
-                default:
-                    throw new ArgumentException("Unsupported message type");
+            if(message() is Vector2D pos){
+                ReceiveFromPhysicsComponent(pos);
             }
         }
 
