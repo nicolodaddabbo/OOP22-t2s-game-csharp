@@ -13,15 +13,15 @@ namespace T2SGame
 
         private class PowerUp : IPowerUp
         {
-            private Action<IEntity> function;
+            private Action<IEntity> _function;
             public PowerUp(Action<IEntity> function)
             {
-                this.function = function;
+                _function = function;
             }
 
             public void Obtain(IEntity entity)
             {
-                function.Invoke(entity);
+                _function.Invoke(entity);
             }
         }
 

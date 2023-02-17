@@ -5,10 +5,10 @@ namespace T2SGame
     /// </summary>
     public enum Enemy : byte
     {
-        BASE,
-        GAUSSIAN,
-        WILD,
-        BOSS
+        Base,
+        Gaussian,
+        Wild,
+        Boss
     }
 
     /// <summary>
@@ -20,13 +20,13 @@ namespace T2SGame
         {
             switch (enemy)
             {
-                case Enemy.BASE:
+                case Enemy.Base:
                     return EntityFactory.CreateBaseEnemy();
-                case Enemy.GAUSSIAN:
+                case Enemy.Gaussian:
                     return EntityFactory.CreateGaussianEnemy();
-                case Enemy.WILD:
+                case Enemy.Wild:
                     return EntityFactory.CreateWildEnemy();
-                case Enemy.BOSS:
+                case Enemy.Boss:
                     return EntityFactory.CreateBossEnemy();
                 default:
                     return EntityFactory.CreateBaseEnemy();

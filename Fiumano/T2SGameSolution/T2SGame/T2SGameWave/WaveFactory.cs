@@ -8,21 +8,21 @@ namespace T2SGame
     {
         private class Wave : IWave
         {
-            private List<IEntity> entities;
+            private List<IEntity> _entities;
             public Wave(List<IEntity> entities)
             {
-                this.entities = entities;
+                _entities = entities;
             }
 
             public IWave AddEnemy(IEntity entity)
             {
-                entities.Add(entity);
+                _entities.Add(entity);
                 return this;
             }
 
             public List<IEntity> GetEnemies()
             {
-                return entities;
+                return _entities;
             }
         }
 
@@ -36,7 +36,7 @@ namespace T2SGame
         public IWave CreateBasicWave(int round)
         {
             return CreateWaveFromEnemies(Enumerable.Range(0, round / 2)
-                .Select(en => Enemy.BASE.CreateEnemyFromEnumType())
+                .Select(en => Enemy.Base.CreateEnemyFromEnumType())
                 .ToList());
         }
 
@@ -51,7 +51,7 @@ namespace T2SGame
         /// <inheritdoc />
         public IWave CreateBossWave(int round)
         {
-            return CreateRandomWave(round / 2).AddEnemy(Enemy.BOSS.CreateEnemyFromEnumType());
+            return CreateRandomWave(round / 2).AddEnemy(Enemy.Boss.CreateEnemyFromEnumType());
         }
 
         /// disabled warning CS8605 "Unboxing a possibly null value" the value 
