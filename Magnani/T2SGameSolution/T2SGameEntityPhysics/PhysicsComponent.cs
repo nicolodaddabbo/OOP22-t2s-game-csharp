@@ -1,3 +1,5 @@
+using T2SGameInput;
+
 namespace T2SGameEntityPhysics
 {
     /// <summary>

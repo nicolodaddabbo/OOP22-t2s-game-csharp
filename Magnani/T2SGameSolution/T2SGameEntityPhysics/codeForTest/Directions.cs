@@ -1,4 +1,4 @@
-namespace T2SGameEntityPhysics
+namespace T2SGameInput
 {
     /// <summary>
     /// Possible entity's movement directions.
