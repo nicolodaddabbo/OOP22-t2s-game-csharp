@@ -1,7 +1,8 @@
-namespace T2SGameSolution.codeForTestPurposes;
+namespace T2SGame;
 
 public interface IEntity
 {
+    ///ONLY FOR TESTING PURPOSES NOT TO BE INTENDED AS MY (Fiumanò) PART
 
     /// <typeparam name="T">Type of the requested component.</typeparam>
     /// <returns>The specified component if present, otherwise returns null.</returns>

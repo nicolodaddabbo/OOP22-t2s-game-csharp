@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace T2SGameSolution.T2SGamePowerUp
+namespace T2SGame
 {   /// <summary>
     /// interface describing a PowerUp factory.
     /// </summary>

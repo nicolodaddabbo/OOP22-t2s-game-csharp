@@ -1,5 +1,7 @@
-namespace T2SGameSolution.codeForTestPurposes
+namespace T2SGame
 {
+    ///ONLY FOR TESTING PURPOSES NOT TO BE INTENDED AS MY (Fiumanò) PART
+
     /// <summary>
     /// This interface models a message container.
     /// </summary>

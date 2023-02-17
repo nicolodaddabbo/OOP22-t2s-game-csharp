@@ -1,17 +1,23 @@
-using T2SGameSolution.codeForTestPurposes;
-
-namespace T2SGameSolution.T2SGameWave
+namespace T2SGame
 {
-    public enum Enemy{
+    /// <summary>
+    /// Basic enum representing the type of enemy
+    /// </summary>
+    public enum Enemy : byte
+    {
         BASE,
         GAUSSIAN,
         WILD,
         BOSS
     }
 
+    /// <summary>
+    /// extension method for Enum Enemy
+    /// </summary>
     public static class EnemyExtension
     {
-        public static IEntity CreateEnemyFromEnumType(this Enemy enemy){
+        public static IEntity CreateEnemyFromEnumType(this Enemy enemy)
+        {
             switch (enemy)
             {
                 case Enemy.BASE:
@@ -23,7 +29,7 @@ namespace T2SGameSolution.T2SGameWave
                 case Enemy.BOSS:
                     return EntityFactory.CreateBossEnemy();
                 default:
-                    return null;
+                    return EntityFactory.CreateBaseEnemy();
             }
         }
     }

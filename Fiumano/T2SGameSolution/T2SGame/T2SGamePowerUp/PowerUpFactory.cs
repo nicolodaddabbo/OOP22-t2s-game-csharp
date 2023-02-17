@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
-using T2SGameSolution.codeForTestPurposes;
-
-namespace T2SGameSolution.T2SGamePowerUp
+namespace T2SGame
 {
     public class PowerUpFactory : IPowerUpFactory
     {
@@ -32,6 +30,7 @@ namespace T2SGameSolution.T2SGamePowerUp
             return new PowerUp(function);
         }
    
+        /// <inheritdoc />
         public IPowerUp GenerateDamageBoostPowerUp()
         {
             return FromFunction(entity =>
@@ -44,6 +43,7 @@ namespace T2SGameSolution.T2SGamePowerUp
             });
         }
 
+        /// <inheritdoc />
         public IPowerUp GenerateFireRatioPowerUp()
         {
             return this.FromFunction(entity =>
@@ -56,6 +56,7 @@ namespace T2SGameSolution.T2SGamePowerUp
             });
         }
 
+        /// <inheritdoc />
         public IPowerUp GenerateHealthUpPowerUp()
         {
             return this.FromFunction(entity =>
@@ -68,6 +69,7 @@ namespace T2SGameSolution.T2SGamePowerUp
             });
         }
 
+        /// <inheritdoc />
         public IPowerUp GenerateProjectileSizeUpPowerUp()
         {
             return this.FromFunction(entity =>
@@ -80,6 +82,7 @@ namespace T2SGameSolution.T2SGamePowerUp
             });
         }
 
+        /// <inheritdoc />
         public IPowerUp GenerateProjectileSpeedUpPowerUp()
         {
             return this.FromFunction(entity =>
@@ -92,6 +95,7 @@ namespace T2SGameSolution.T2SGamePowerUp
             });
         }
 
+        /// <inheritdoc />
         public IPowerUp GenerateSpeedUpPowerUp()
         {
             return this.FromFunction(entity =>
@@ -104,16 +108,17 @@ namespace T2SGameSolution.T2SGamePowerUp
             });
         }
 
+        /// <inheritdoc />
         public List<IPowerUp> GetObtainablePowerUpList()
         {
             return new List<IPowerUp>
             {
-                this.GenerateDamageBoostPowerUp(),
-                this.GenerateFireRatioPowerUp(),
-                this.GenerateHealthUpPowerUp(),
-                this.GenerateProjectileSizeUpPowerUp(),
-                this.GenerateProjectileSpeedUpPowerUp(),
-                this.GenerateSpeedUpPowerUp()
+                GenerateDamageBoostPowerUp(),
+                GenerateFireRatioPowerUp(),
+                GenerateHealthUpPowerUp(),
+                GenerateProjectileSizeUpPowerUp(),
+                GenerateProjectileSpeedUpPowerUp(),
+                GenerateSpeedUpPowerUp()
             };
         }
     }

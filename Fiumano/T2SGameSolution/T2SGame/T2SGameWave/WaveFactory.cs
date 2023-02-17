@@ -1,7 +1,8 @@
+using System;
 using System.Collections.Generic;
-using T2SGameSolution.codeForTestPurposes;
+using System.Linq;
 
-namespace T2SGameSolution.T2SGameWave
+namespace T2SGame
 {
     public class WaveFactory : IWaveFactory
     {
@@ -25,33 +26,38 @@ namespace T2SGameSolution.T2SGameWave
             }
         }
 
+        /// <inheritdoc />
         private IWave CreateWaveFromEnemies(List<IEntity> enemies)
         {
             return new Wave(enemies);
         }
 
+        /// <inheritdoc />
         public IWave CreateBasicWave(int round)
         {
-            return CreateWaveFromEnemies(Enumerable.Range(0, round)
+            return CreateWaveFromEnemies(Enumerable.Range(0, round / 2)
                 .Select(en => Enemy.BASE.CreateEnemyFromEnumType())
                 .ToList());
         }
 
+        /// <inheritdoc />
         public IWave CreateRandomWave(int round)
         {
-            return CreateWaveFromEnemies(Enumerable.Range(0, round)
+            return CreateWaveFromEnemies(Enumerable.Range(0, round / 2)
                 .Select(en => RandomEnemy().CreateEnemyFromEnumType())
                 .ToList());
         }
 
+        /// <inheritdoc />
         public IWave CreateBossWave(int round)
         {
             return CreateRandomWave(round / 2).AddEnemy(Enemy.BOSS.CreateEnemyFromEnumType());
         }
 
-        private Enemy RandomEnemy(){
+        private Enemy RandomEnemy()
+        {
             Random random = new Random();
-            return (Enemy) Enum.GetValues(typeof(Enemy)).GetValue(random.Next(Enum.GetNames(typeof(Enemy)).Length - 1));
+            return (Enemy)Enum.GetValues(typeof(Enemy)).GetValue(random.Next(Enum.GetNames(typeof(Enemy)).Length - 1));
         }
     }
 }
