@@ -1,3 +1,5 @@
+using T2SGame;
+
 namespace T2SGameEntityPhysics
 {
     /// <summary>
@@ -7,6 +9,9 @@ namespace T2SGameEntityPhysics
     {
 
         private readonly HashSet<IComponent> _components;
+
+        /// <inheritdoc />
+        public IWorld? World { get; set; }
 
         /// <inheritdoc />
         public EntityType Type { get; }

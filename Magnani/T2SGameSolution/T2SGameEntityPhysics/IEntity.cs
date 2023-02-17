@@ -1,3 +1,5 @@
+using T2SGame;
+
 namespace T2SGameEntityPhysics
 {
     /// <summary>
@@ -9,6 +11,11 @@ namespace T2SGameEntityPhysics
         /// List of components of the entity.
         /// </summary>
         HashSet<IComponent> Components { get; }
+
+        /// <summary>
+        /// The enviroment where the entity is placed.
+        /// </summary>
+        IWorld? World { get; set; }
 
         /// <summary>
         /// The type of entity.
