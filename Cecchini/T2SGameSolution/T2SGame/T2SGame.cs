@@ -8,9 +8,9 @@ using T2SGameEntityPhysics;
 /// </summary>
 public class T2SGame : IGame
 {
-    private IState _state;
-    private IWorld _world;
-    private IWaveFactory _waveFactory = new WaveFactory();
+    private readonly IState _state;
+    private readonly IWorld _world;
+    private readonly IWaveFactory _waveFactory = new WaveFactory();
 
     /// <summary>
     /// Create a T2SGame based on state and world.
