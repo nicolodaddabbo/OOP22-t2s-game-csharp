@@ -8,7 +8,7 @@ namespace T2SGameEntityPhysics
     public class PhysicsComponent : AbstractComponent
     {
 
-        private const double CONVERSION = 2;
+        private const double Conversion = 2;
 
         /// <summary>
         /// The speed of the entity.
@@ -68,7 +68,7 @@ namespace T2SGameEntityPhysics
         /// <returns>The converted speed of the entity.</returns>
         public double GetConvertedSpeed()
         {
-            return CONVERSION * Speed;
+            return Conversion * Speed;
         }
 
     }
