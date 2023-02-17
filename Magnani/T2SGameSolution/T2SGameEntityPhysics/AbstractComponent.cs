@@ -12,7 +12,7 @@ namespace T2SGameEntityPhysics
         public abstract void Update();
 
         /// <inheritdoc />
-        public abstract void Receive<T>(IMessageFunc<T> message);
+        public abstract void Receive<T>(MessageFunc<T> message);
 
         /// <summary>
         /// The entity the component is linked to.

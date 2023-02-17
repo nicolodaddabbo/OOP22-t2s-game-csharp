@@ -33,7 +33,7 @@ namespace T2SGameEntityPhysics
         }
 
         /// <inheritdoc />
-        public override void Receive<T>(IMessageFunc<T> message)
+        public override void Receive<T>(MessageFunc<T> message)
         {
             if(message() is Directions dir){
                 ReceiveDirection(dir);

@@ -21,7 +21,7 @@ namespace T2SGameEntityPhysics
         /// </summary>
         /// <param name="message">The message to receive.</param>
         /// <typeparam name="T">The type of message.</typeparam>
-        void Receive<T>(IMessageFunc<T> message);
+        void Receive<T>(MessageFunc<T> message);
 
     }
 }

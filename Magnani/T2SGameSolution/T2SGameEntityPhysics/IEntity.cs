@@ -22,7 +22,7 @@ namespace T2SGameEntityPhysics
 
         /// <typeparam name="T">Type of the requested component.</typeparam>
         /// <returns>The specified component if present, otherwise returns null.</returns>
-        T GetComponent<T>() where T : IComponent;
+        T? GetComponent<T>() where T : IComponent;
 
         /// <summary>
         /// This method is used to add components to the entity.
@@ -38,7 +38,7 @@ namespace T2SGameEntityPhysics
         /// <param name="message">The message to send.</param>
         /// <typeparam name="T">The type of the receiver.</typeparam>
         /// <typeparam name="S">The type of the message.</typeparam>
-        void NotifyComponent<T, S>(IMessageFunc<S> message) where T : IComponent;
+        void NotifyComponent<T, S>(MessageFunc<S> message) where T : IComponent;
 
     }
 }

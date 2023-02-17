@@ -5,5 +5,5 @@ namespace T2SGameEntityPhysics
     /// </summary>
     /// <typeparam name="T">The type of message.</typeparam>
     /// <returns>The contained message.</returns>
-    public delegate T IMessageFunc<T>();
+    public delegate T MessageFunc<T>();
 }
