@@ -1,4 +1,5 @@
 namespace T2SGame;
+using T2SGameEntityPhysics;
 
 /// <summary>
 /// This class represents a T2S Game.
@@ -9,6 +10,7 @@ public class T2SGame : IGame
 {
     private IState _state;
     private IWorld _world;
+    private IWaveFactory _waveFactory = new WaveFactory();
 
     /// <summary>
     /// Create a T2SGame based on state and world.
@@ -32,7 +34,21 @@ public class T2SGame : IGame
     /// <inheritdoc />
     public void Update()
     {
-        // [TODO]
-        _state.IncrementRound();
+        AddWaveIfOver();
     }
+
+    private void NextWave()
+    {
+        _state.IncrementRound();
+        _world.CurrentWave = _waveFactory.CreateBasicWave(_state.Round);
+    }
+
+    private void AddWaveIfOver()
+    {
+        if (_state.IsWaveOver(_world.CurrentWave))
+        {
+            NextWave();
+        }
+    }
+    
 }
