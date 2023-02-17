@@ -35,8 +35,9 @@ public class WorldTest
     public void TestCreateWorldWithOnePlayer()
     {
         var world = _worldFactory.CreateWorldWithOnePlayer();
-        TestBasics(world);
         Assert.AreEqual(1, world.Players.Count);
+        TestBasics(world);
+
 
     }
 
@@ -44,9 +45,9 @@ public class WorldTest
     public void TestCreateWorldWithCompanion()
     {
         var world = _worldFactory.CreateWorldWithPlayerAndCompanion();
-        TestBasics(world);
         Assert.AreEqual(1, world.Players.Count);
         IEntity? companion = world.Entities.Find(e => e.Type == EntityType.Companion);
         Assert.IsNotNull(companion);
+        TestBasics(world);
     }
 }
