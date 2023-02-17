@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+/// disabled warning CS8602 Dereference of a possibly null reference, 
+/// the value will never be null because is setted before the dereference 
+#pragma warning disable CS8602
 namespace T2STests
 {
     [TestClass]
