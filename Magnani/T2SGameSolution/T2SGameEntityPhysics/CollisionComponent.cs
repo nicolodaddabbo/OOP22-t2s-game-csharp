@@ -29,10 +29,23 @@ namespace T2SGameEntityPhysics
             _types = types;
         }
 
+        // Disable "nullable reference types" warning because null values returned by
+        // GetComponent() are being checked so there can't be a null reference.
+        #pragma warning disable CS8602 // Dereference of a possibly null reference.
         /// <inheritdoc />
         public override void Update()
         {
-            KnockBack();
+            Entity.World?.Entities
+                .Where(e => _types.Contains(e.Type))
+                .Select(e => e.GetComponent<CollisionComponent>())
+                .Where(c => c != null)
+                .Where(c => Shape.IsColliding(c.Shape))
+                .ToList()
+                .ForEach(c => {
+                    if (IsRigid || c.IsRigid){
+                        KnockBack();
+                    }
+                });
         }
 
         /// <inheritdoc />

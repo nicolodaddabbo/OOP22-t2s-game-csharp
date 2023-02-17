@@ -7,5 +7,10 @@ namespace T2SGameEntityPhysics
         public Shape(Vector2D center){
             Center = center;
         }
+
+        public Boolean IsColliding(Shape shape){
+            return Center == shape.Center;
+        }
+
     }
 }
