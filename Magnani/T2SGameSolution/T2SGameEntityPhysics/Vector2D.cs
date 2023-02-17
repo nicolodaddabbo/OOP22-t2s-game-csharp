@@ -10,7 +10,7 @@ namespace T2SGameEntityPhysics
         /// Coordinate of the vector in x axis.
         /// </summary>
         public double X { get; }
-        
+
         /// <summary>
         /// Coordinate of the vector in y axis.
         /// </summary>

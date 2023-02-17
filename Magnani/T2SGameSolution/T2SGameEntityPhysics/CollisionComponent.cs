@@ -41,8 +41,10 @@ namespace T2SGameEntityPhysics
                 .Where(c => c != null)
                 .Where(c => Shape.IsColliding(c.Shape))
                 .ToList()
-                .ForEach(c => {
-                    if (IsRigid || c.IsRigid){
+                .ForEach(c =>
+                {
+                    if (IsRigid || c.IsRigid)
+                    {
                         KnockBack();
                     }
                 });
@@ -51,7 +53,8 @@ namespace T2SGameEntityPhysics
         /// <inheritdoc />
         public override void Receive<T>(MessageFunc<T> message)
         {
-            if(message() is Vector2D pos){
+            if (message() is Vector2D pos)
+            {
                 ReceiveFromPhysicsComponent(pos);
             }
         }
