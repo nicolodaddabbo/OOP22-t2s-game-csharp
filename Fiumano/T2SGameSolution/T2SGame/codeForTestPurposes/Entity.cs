@@ -15,7 +15,7 @@ namespace T2SGame
         }
 
         /// <inheritdoc />
-        public T GetComponent<T>() where T : IComponent
+        public T? GetComponent<T>() where T : IComponent
         {
             return _components.OfType<T>().FirstOrDefault();
         }

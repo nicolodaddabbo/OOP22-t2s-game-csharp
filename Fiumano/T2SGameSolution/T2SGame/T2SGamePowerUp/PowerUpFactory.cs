@@ -24,18 +24,18 @@ namespace T2SGame
                 function.Invoke(entity);
             }
         }
-        
+
         private IPowerUp FromFunction(Action<IEntity> function)
         {
             return new PowerUp(function);
         }
-   
+
         /// <inheritdoc />
         public IPowerUp GenerateDamageBoostPowerUp()
         {
             return FromFunction(entity =>
             {
-                ShootComponent shootComponent = entity.GetComponent<ShootComponent>();
+                ShootComponent? shootComponent = entity.GetComponent<ShootComponent>();
                 if (shootComponent != null)
                 {
                     shootComponent.ProjectileDamage += DmgUp;
@@ -48,7 +48,7 @@ namespace T2SGame
         {
             return this.FromFunction(entity =>
             {
-                ShootComponent shootComponent = entity.GetComponent<ShootComponent>();
+                ShootComponent? shootComponent = entity.GetComponent<ShootComponent>();
                 if (shootComponent != null)
                 {
                     shootComponent.FireRateSeconds = shootComponent.FireRateSeconds + FirerateUp;
@@ -61,7 +61,7 @@ namespace T2SGame
         {
             return this.FromFunction(entity =>
             {
-                HealthComponent healthComponent = entity.GetComponent<HealthComponent>();
+                HealthComponent? healthComponent = entity.GetComponent<HealthComponent>();
                 if (healthComponent != null)
                 {
                     healthComponent.Health += HealthUp;
@@ -74,7 +74,7 @@ namespace T2SGame
         {
             return this.FromFunction(entity =>
             {
-                ShootComponent shootComponent = entity.GetComponent<ShootComponent>();
+                ShootComponent? shootComponent = entity.GetComponent<ShootComponent>();
                 if (shootComponent != null)
                 {
                     shootComponent.ProjectileSize += ProjSizeUp;
@@ -87,7 +87,7 @@ namespace T2SGame
         {
             return this.FromFunction(entity =>
             {
-                ShootComponent shootComponent = entity.GetComponent<ShootComponent>();
+                ShootComponent? shootComponent = entity.GetComponent<ShootComponent>();
                 if (shootComponent != null)
                 {
                     shootComponent.ProjectileSpeed += ProjSpeedUp;
@@ -100,7 +100,7 @@ namespace T2SGame
         {
             return this.FromFunction(entity =>
             {
-                PhysicsComponent physicsComponent = entity.GetComponent<PhysicsComponent>();
+                PhysicsComponent? physicsComponent = entity.GetComponent<PhysicsComponent>();
                 if (physicsComponent != null)
                 {
                     physicsComponent.Speed += SpeedUp;
