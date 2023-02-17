@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using T2SGameEntityPhysics;
-
 namespace T2SGameEntityPhysics
 {
     public interface IWave

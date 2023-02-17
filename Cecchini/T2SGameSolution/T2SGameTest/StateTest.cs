@@ -1,14 +1,13 @@
-using T2SGameEntityPhysics;
-
 namespace test;
 
 [TestClass]
 public class StateTest
 {
+    private WaveFactory _waveFactory = new WaveFactory();
     [TestMethod]
     public void testState()
     {
-        IState? state = null;
+        IState state = new T2SState();
         Assert.AreEqual(0 , state.Round);
         state.IncrementRound();
         Assert.AreEqual(1 , state.Round);
@@ -19,10 +18,9 @@ public class StateTest
         state.IncrementRound();
         Assert.AreEqual(4 , state.Round);
         // Testing isWaveOver logics
-        IWave? wave = null;
+        IWave wave = _waveFactory.CreateBasicWave(1);
         Assert.IsFalse(state.IsWaveOver(wave));
-        // [TODO] Kill all enemies in the wave
-        // ...
+        wave.GetEnemies().Clear();
         Assert.IsTrue(state.IsWaveOver(wave));
     }
 }

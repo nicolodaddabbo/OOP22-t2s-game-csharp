@@ -29,27 +29,27 @@ public interface IWorld
     /// </summary>
     /// <param name="entity">Entity to be added to the world.</param>
     /// <returns>this.</returns>
-    IWorld addEntity(IEntity entity);
+    IWorld AddEntity(IEntity entity);
 
     /// <summary>
     /// Adds a List of entities in to the world.
     /// </summary>
     /// <param name="entities">the entities to add to world.</param>
     /// <returns>this.</returns>
-    IWorld addEntities(List<IEntity> entities);
+    IWorld AddEntities(List<IEntity> entities);
 
     /// <summary>
     /// Remove the entity from the world.
     /// </summary>
     /// <param name="entity">Th entity to remove.</param>
     /// <returns>this.</returns>
-    IWorld removeEntity(IEntity entity);
+    IWorld RemoveEntity(IEntity entity);
 
     /// <summary>
     ///  Removes a List of entities from the world.
     /// </summary>
     /// <param name="entities">The list of entities to remove.</param>
     /// <returns>this.</returns>
-    IWorld removeEntities(List<IEntity> entities);
+    IWorld RemoveEntities(List<IEntity> entities);
 
 }
