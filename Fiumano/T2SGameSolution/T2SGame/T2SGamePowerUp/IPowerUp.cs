@@ -1,6 +1,4 @@
-using T2SGameSolution.codeForTestPurposes;
-
-namespace T2SGameSolution.T2SGamePowerUp
+namespace T2SGame
 {
     /// <summary>
     /// functional interface that represents a power up.

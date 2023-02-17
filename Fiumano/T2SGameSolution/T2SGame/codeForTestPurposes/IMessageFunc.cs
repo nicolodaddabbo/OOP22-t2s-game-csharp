@@ -1,5 +1,7 @@
-namespace T2SGameEntityPhysics
+namespace T2SGame
 {
+    ///ONLY FOR TESTING PURPOSES NOT TO BE INTENDED AS MY (Fiumanò) PART
+
     /// <summary>
     /// This interface models a message container.
     /// </summary>
@@ -7,3 +9,4 @@ namespace T2SGameEntityPhysics
     /// <returns>The contained message.</returns>
     public delegate T IMessageFunc<T>();
 }
+

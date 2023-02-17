@@ -1,5 +1,5 @@
-namespace T2SGameSolution.codeForTestPurposes;
-
+namespace T2SGame;
+    ///ONLY FOR TESTING PURPOSES NOT TO BE INTENDED AS MY (Fiumanò) PART
     public class EntityFactory
     {
         public static IEntity CreateBaseEnemy()

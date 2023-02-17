@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T2SGameSolution", "T2SGameSolution.csproj", "{4B2EA57E-CEDA-4851-98E0-E4DC2C076BF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T2SGame", "T2SGame\T2SGame.csproj", "{36646394-2E7A-4121-B5F9-A740E8BAEE4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T2STests", "T2STests\T2STests.csproj", "{1A3580F2-B153-454E-957E-953631DA17B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +20,13 @@ Global
 		{4B2EA57E-CEDA-4851-98E0-E4DC2C076BF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B2EA57E-CEDA-4851-98E0-E4DC2C076BF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B2EA57E-CEDA-4851-98E0-E4DC2C076BF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36646394-2E7A-4121-B5F9-A740E8BAEE4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36646394-2E7A-4121-B5F9-A740E8BAEE4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36646394-2E7A-4121-B5F9-A740E8BAEE4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36646394-2E7A-4121-B5F9-A740E8BAEE4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A3580F2-B153-454E-957E-953631DA17B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A3580F2-B153-454E-957E-953631DA17B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A3580F2-B153-454E-957E-953631DA17B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A3580F2-B153-454E-957E-953631DA17B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

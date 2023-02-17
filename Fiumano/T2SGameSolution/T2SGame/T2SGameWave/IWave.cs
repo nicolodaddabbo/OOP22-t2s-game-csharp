@@ -1,8 +1,10 @@
 using System.Collections.Generic;
-using T2SGameSolution.codeForTestPurposes;
 
-namespace T2SGameSolution.T2SGameWave
+namespace T2SGame
 {
+    /// <summary>
+    /// Interface that abstracts the concept of wave
+    /// </summary>
     public interface IWave
     {
         /// <summary>

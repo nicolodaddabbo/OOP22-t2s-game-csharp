@@ -1,5 +1,8 @@
-namespace T2SGameSolution.T2SGameWave
+namespace T2SGame
 {
+    /// <summary>
+    /// Interface that abstracts the concept of a Wave factory
+    /// </summary>
     public interface IWaveFactory
     {
         /// <summary>

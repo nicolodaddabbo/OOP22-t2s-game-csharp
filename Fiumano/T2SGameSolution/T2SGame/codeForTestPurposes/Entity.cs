@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace T2SGameSolution.codeForTestPurposes
+namespace T2SGame
 {
+    ///ONLY FOR TESTING PURPOSES NOT TO BE INTENDED AS MY (Fiumanò) PART
     public class Entity : IEntity
     {
-        private readonly HashSet<IComponent> _components;
-        private Vector2D _position;
+        private readonly HashSet<IComponent> _components = new HashSet<IComponent>();
 
         /// <inheritdoc />
         public HashSet<IComponent> Components
@@ -15,7 +15,7 @@ namespace T2SGameSolution.codeForTestPurposes
         }
 
         /// <inheritdoc />
-        public T GetComponent<T>() where T : IComponent
+        public T? GetComponent<T>() where T : IComponent
         {
             return _components.OfType<T>().FirstOrDefault();
         }

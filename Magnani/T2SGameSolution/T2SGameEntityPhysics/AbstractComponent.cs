@@ -12,8 +12,13 @@ namespace T2SGameEntityPhysics
         public abstract void Update();
 
         /// <inheritdoc />
-        public abstract void Receive<T>(IMessageFunc<T> message);
+        public abstract void Receive<T>(MessageFunc<T> message);
 
+        // Disable "non-nullable property is uninitialized" warning because an
+        // AbstractComponent always has an associated entity. The entity is assigned
+        // when the component is added to the entity, and can be accessed only through
+        // the entity, ensuring that the property is never null.
+        #pragma warning disable CS8618
         /// <summary>
         /// The entity the component is linked to.
         /// </summary>

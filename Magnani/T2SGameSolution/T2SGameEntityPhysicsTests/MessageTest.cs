@@ -1,3 +1,8 @@
+using T2SGameInput;
+
+// Disable "nullable reference types" warning because null values returned by
+// GetComponent() dont need to be checked they are always not null.
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
 namespace T2SGameEntityPhysicsTests
 {
 

@@ -1,3 +1,5 @@
+using T2SGameInput;
+
 namespace T2SGameEntityPhysics
 {
     /// <summary>
@@ -6,7 +8,7 @@ namespace T2SGameEntityPhysics
     public class PhysicsComponent : AbstractComponent
     {
 
-        private const double CONVERSION = 2;
+        private const double Conversion = 2;
 
         /// <summary>
         /// The speed of the entity.
@@ -33,9 +35,10 @@ namespace T2SGameEntityPhysics
         }
 
         /// <inheritdoc />
-        public override void Receive<T>(IMessageFunc<T> message)
+        public override void Receive<T>(MessageFunc<T> message)
         {
-            if(message() is Directions dir){
+            if (message() is Directions dir)
+            {
                 ReceiveDirection(dir);
             }
         }
@@ -65,7 +68,7 @@ namespace T2SGameEntityPhysics
         /// <returns>The converted speed of the entity.</returns>
         public double GetConvertedSpeed()
         {
-            return CONVERSION * Speed;
+            return Conversion * Speed;
         }
 
     }

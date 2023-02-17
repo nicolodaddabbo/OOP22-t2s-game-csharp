@@ -1,3 +1,5 @@
+using T2SGame;
+
 namespace T2SGameEntityPhysics
 {
     /// <summary>
@@ -7,6 +9,9 @@ namespace T2SGameEntityPhysics
     {
 
         private readonly HashSet<IComponent> _components;
+
+        /// <inheritdoc />
+        public IWorld? World { get; set; }
 
         /// <inheritdoc />
         public EntityType Type { get; }
@@ -24,13 +29,10 @@ namespace T2SGameEntityPhysics
         }
 
         /// <inheritdoc />
-        public HashSet<IComponent> Components
-        {
-            get { return new HashSet<IComponent>(_components); }
-        }
+        public HashSet<IComponent> Components => new HashSet<IComponent>(_components);
 
         /// <inheritdoc />
-        public T GetComponent<T>() where T : IComponent
+        public T? GetComponent<T>() where T : IComponent
         {
             return _components.OfType<T>().FirstOrDefault();
         }
@@ -47,7 +49,7 @@ namespace T2SGameEntityPhysics
         }
 
         /// <inheritdoc />
-        public void NotifyComponent<T, S>(IMessageFunc<S> message) where T : IComponent
+        public void NotifyComponent<T, S>(MessageFunc<S> message) where T : IComponent
         {
             GetComponent<T>()?.Receive(message);
         }
