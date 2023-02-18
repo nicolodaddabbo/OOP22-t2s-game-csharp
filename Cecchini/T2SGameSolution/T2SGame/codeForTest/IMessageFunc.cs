@@ -1,4 +1,4 @@
-namespace T2SGameEntityPhysics
+namespace ecs
 {
     /// <summary>
     /// This interface models a message container.

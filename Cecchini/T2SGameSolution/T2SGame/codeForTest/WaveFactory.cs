@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace T2SGameEntityPhysics
+namespace ecs
 {
     public class WaveFactory : IWaveFactory
     {
@@ -47,10 +47,12 @@ namespace T2SGameEntityPhysics
         {
             return CreateRandomWave(round / 2).AddEnemy(Enemy.BOSS.CreateEnemyFromEnumType());
         }
-
+    
         private Enemy RandomEnemy(){
             Random random = new Random();
+            #pragma warning disable CS8605
             return (Enemy) Enum.GetValues(typeof(Enemy)).GetValue(random.Next(Enum.GetNames(typeof(Enemy)).Length - 1));
+            #pragma warning restore CS8605
         }
     }
 }

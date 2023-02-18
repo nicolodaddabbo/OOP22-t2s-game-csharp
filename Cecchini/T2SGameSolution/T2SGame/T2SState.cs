@@ -1,5 +1,5 @@
 using System.Linq;
-using T2SGameEntityPhysics;
+using ecs;
 
 namespace T2SGame;
 

@@ -1,5 +1,5 @@
 namespace T2SGame;
-using T2SGameEntityPhysics;
+using ecs;
 /// <summary>
 /// Rapresenting the "World" of T2S game.
 /// The World is like a "container" of different entities involved in the game.

@@ -1,4 +1,4 @@
-namespace T2SGameEntityPhysics
+namespace ecs
 {
     /// <summary>
     /// This class represents an entity.
@@ -30,7 +30,7 @@ namespace T2SGameEntityPhysics
         }
 
         /// <inheritdoc />
-        public T GetComponent<T>() where T : IComponent
+        public T? GetComponent<T>() where T : IComponent
         {
             return _components.OfType<T>().FirstOrDefault();
         }

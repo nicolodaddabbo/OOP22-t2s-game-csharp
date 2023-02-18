@@ -1,5 +1,5 @@
 namespace T2SGame;
-using T2SGameEntityPhysics;
+using ecs;
 /// <summary>
 /// Rapresent the state and the logics of a Game.
 /// </summary>

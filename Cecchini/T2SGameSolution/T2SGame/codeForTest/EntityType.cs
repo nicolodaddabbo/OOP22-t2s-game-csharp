@@ -1,4 +1,4 @@
-namespace T2SGameEntityPhysics
+namespace ecs
 {
     /// <summary>
     /// This enum represents the types of the entities.

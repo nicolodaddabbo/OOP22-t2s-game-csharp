@@ -1,4 +1,4 @@
-namespace T2SGameEntityPhysics
+namespace ecs
 {
     /// <summary>
     /// This class represents a vector in a two-dimensional space.

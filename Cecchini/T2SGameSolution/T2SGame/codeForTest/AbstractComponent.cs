@@ -1,4 +1,4 @@
-namespace T2SGameEntityPhysics
+namespace ecs
 {
     /// <summary>
     /// This abstract class factorized the common code between all components
@@ -17,7 +17,7 @@ namespace T2SGameEntityPhysics
         /// <summary>
         /// The entity the component is linked to.
         /// </summary>
-        public IEntity Entity { get; set; }
+        public IEntity? Entity { get; set; }
 
     }
 }

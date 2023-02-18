@@ -1,4 +1,4 @@
-namespace T2SGameEntityPhysics
+namespace ecs
 {
     /// <summary>
     /// This interface represents the entities of the game.
@@ -22,7 +22,7 @@ namespace T2SGameEntityPhysics
 
         /// <typeparam name="T">Type of the requested component.</typeparam>
         /// <returns>The specified component if present, otherwise returns null.</returns>
-        T GetComponent<T>() where T : IComponent;
+        T? GetComponent<T>() where T : IComponent;
 
         /// <summary>
         /// This method is used to add components to the entity.

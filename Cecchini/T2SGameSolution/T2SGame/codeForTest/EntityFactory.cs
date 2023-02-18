@@ -1,4 +1,4 @@
-namespace T2SGameEntityPhysics;
+namespace ecs;
 
 public class EntityFactory
 {

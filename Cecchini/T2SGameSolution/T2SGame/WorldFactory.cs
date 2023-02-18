@@ -1,6 +1,6 @@
 using System.Collections.Immutable;
 namespace T2SGame;
-using T2SGameEntityPhysics;
+using ecs;
 /// <summary>
 /// Represents the WorldFactory's implementation.
 /// </summary>

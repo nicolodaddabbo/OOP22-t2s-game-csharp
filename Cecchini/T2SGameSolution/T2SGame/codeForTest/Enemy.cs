@@ -1,6 +1,4 @@
-using T2SGameEntityPhysics;
-
-namespace T2SGameSolution.T2SGameWave
+namespace ecs
 {
     public enum Enemy{
         BASE,
@@ -23,7 +21,7 @@ namespace T2SGameSolution.T2SGameWave
                 case Enemy.BOSS:
                     return EntityFactory.CreateBossEnemy();
                 default:
-                    return null;
+                    return EntityFactory.CreateBaseEnemy();
             }
         }
     }

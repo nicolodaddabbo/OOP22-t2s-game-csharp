@@ -1,5 +1,5 @@
 namespace T2SGame;
-using T2SGameEntityPhysics;
+using ecs;
 
 /// <summary>
 /// This class represents a T2S Game.
