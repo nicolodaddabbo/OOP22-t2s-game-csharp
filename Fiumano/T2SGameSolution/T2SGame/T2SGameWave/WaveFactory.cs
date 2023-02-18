@@ -54,13 +54,14 @@ namespace T2SGame
             return CreateRandomWave(round / 2).AddEnemy(Enemy.Boss.CreateEnemyFromEnumType());
         }
 
-        /// disabled warning CS8605 "Unboxing a possibly null value" the value 
-        /// unboxed by .GetValue wont ever be null because it's unboxed from an Enum.
-        #pragma warning disable CS8605
         private Enemy RandomEnemy()
         {
             Random random = new Random();
+            /// disabled warning CS8605 "Unboxing a possibly null value" the value 
+            /// unboxed by .GetValue wont ever be null because it's unboxed from an Enum.
+            #pragma warning disable CS8605
             return (Enemy)Enum.GetValues(typeof(Enemy)).GetValue(random.Next(Enum.GetNames(typeof(Enemy)).Length - 1));
+            #pragma warning restore CS8605
         }
     }
 }

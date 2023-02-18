@@ -46,7 +46,7 @@ namespace T2SGame
         /// <inheritdoc />
         public IPowerUp GenerateFireRatioPowerUp()
         {
-            return this.FromFunction(entity =>
+            return FromFunction(entity =>
             {
                 ShootComponent? shootComponent = entity.GetComponent<ShootComponent>();
                 if (shootComponent != null)
@@ -59,7 +59,7 @@ namespace T2SGame
         /// <inheritdoc />
         public IPowerUp GenerateHealthUpPowerUp()
         {
-            return this.FromFunction(entity =>
+            return FromFunction(entity =>
             {
                 HealthComponent? healthComponent = entity.GetComponent<HealthComponent>();
                 if (healthComponent != null)
@@ -72,7 +72,7 @@ namespace T2SGame
         /// <inheritdoc />
         public IPowerUp GenerateProjectileSizeUpPowerUp()
         {
-            return this.FromFunction(entity =>
+            return FromFunction(entity =>
             {
                 ShootComponent? shootComponent = entity.GetComponent<ShootComponent>();
                 if (shootComponent != null)
@@ -85,7 +85,7 @@ namespace T2SGame
         /// <inheritdoc />
         public IPowerUp GenerateProjectileSpeedUpPowerUp()
         {
-            return this.FromFunction(entity =>
+            return FromFunction(entity =>
             {
                 ShootComponent? shootComponent = entity.GetComponent<ShootComponent>();
                 if (shootComponent != null)
@@ -98,7 +98,7 @@ namespace T2SGame
         /// <inheritdoc />
         public IPowerUp GenerateSpeedUpPowerUp()
         {
-            return this.FromFunction(entity =>
+            return FromFunction(entity =>
             {
                 PhysicsComponent? physicsComponent = entity.GetComponent<PhysicsComponent>();
                 if (physicsComponent != null)
