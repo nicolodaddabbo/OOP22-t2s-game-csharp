@@ -9,7 +9,7 @@ namespace T2STests
     [TestClass]
     public class WaveTest
     {
-        private IWaveFactory _waveFactory = new WaveFactory();
+        private readonly IWaveFactory _waveFactory = new WaveFactory();
         private const int Round = 10;
 
         [TestMethod]

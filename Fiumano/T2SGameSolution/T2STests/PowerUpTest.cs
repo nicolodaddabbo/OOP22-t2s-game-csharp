@@ -11,7 +11,7 @@ namespace T2STests
     [TestClass]
     public class PowerUpTest
     {
-        private IPowerUpFactory _powerUpFactory = new PowerUpFactory();
+        private readonly IPowerUpFactory _powerUpFactory = new PowerUpFactory();
         private const double FireRateSeconds = 1.5;
         private const double ProjectileSpeed = 1.0;
         private const int ProjectileDamage = 1;
