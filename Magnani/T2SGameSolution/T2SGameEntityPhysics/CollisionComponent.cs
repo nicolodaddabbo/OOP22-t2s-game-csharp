@@ -29,9 +29,6 @@ namespace T2SGameEntityPhysics
             _types = types;
         }
 
-        // Disable "nullable reference types" warning because null values returned by
-        // GetComponent() are being checked so there can't be a null reference.
-        #pragma warning disable CS8602 // Dereference of a possibly null reference.
         /// <inheritdoc />
         public override void Update()
         {
@@ -39,6 +36,9 @@ namespace T2SGameEntityPhysics
                 .Where(e => _types.Contains(e.Type))
                 .Select(e => e.GetComponent<CollisionComponent>())
                 .Where(c => c != null)
+                // Disable "nullable reference types" warning because null values returned by
+                // GetComponent() are being checked so there can't be a null reference.
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
                 .Where(c => Shape.IsColliding(c.Shape))
                 .ToList()
                 .ForEach(c =>
@@ -48,6 +48,7 @@ namespace T2SGameEntityPhysics
                         KnockBack();
                     }
                 });
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
         }
 
         /// <inheritdoc />

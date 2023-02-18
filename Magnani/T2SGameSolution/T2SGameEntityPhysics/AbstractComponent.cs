@@ -18,7 +18,7 @@ namespace T2SGameEntityPhysics
         // AbstractComponent always has an associated entity. The entity is assigned
         // when the component is added to the entity, and can be accessed only through
         // the entity, ensuring that the property is never null.
-        #pragma warning disable CS8618
+#pragma warning disable CS8618
         /// <summary>
         /// The entity the component is linked to.
         /// </summary>
